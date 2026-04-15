@@ -2671,5 +2671,10 @@ input, select, textarea {
 					margin-left: 0;
 					border-left: 0;
 				}
-
+			/* Mobil navigasyon barını ve panelini tamamen gizle */
+			#titleBar, #navPanel {
+			    display: none !important;
+			    visibility: hidden !important;
+			    opacity: 0 !important;
+			}
 	}
