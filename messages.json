@@ -1,6 +1,11 @@
 [
     {
         "user": "Diomedas",
+        "content": "Tst2",
+        "time": "Today at 00:44"
+    },
+    {
+        "user": "Diomedas",
         "content": "Test",
         "time": "Today at 00:25"
     },
@@ -18,10 +23,5 @@
         "user": "Mona",
         "content": "みなさんお久しぶりです。 東京では桜が咲き始めました🌸",
         "time": "Today at 02:50"
-    },
-    {
-        "user": "Blue Eye Senpai",
-        "content": "Hey <@1485190503614906442>, welcome to **Blue Eye Sensei**!",
-        "time": "Today at 11:21"
     }
 ]
