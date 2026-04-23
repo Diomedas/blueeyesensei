@@ -66,13 +66,7 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* --- Discord Widget Full Updated --- */
-
-/* Discord bölümünün başlığını takvimdeki gibi ortalar */
-.discord-section header {
-    text-align: center;
-    margin-bottom: 1.5em;
-}
+/* --- Discord Widget Estetiği (Takvimle Tam Uyumlu) --- */
 
 .discord-widget {
     background: #313338;
@@ -81,7 +75,8 @@ input, select, textarea {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     text-align: left;
-    width: 100%; /* Sütun genişliğini tam doldurur */
+    /* Genişliği Grid (col-4) belirlediği için burası %100 kalmalı */
+    width: 100%; 
     box-sizing: border-box;
     margin-top: 10px;
 }
@@ -106,7 +101,8 @@ input, select, textarea {
 .discord-body {
     padding: 15px;
     font-size: 0.9rem;
-    min-height: 180px; /* Kutunun takvim kutularıyla benzer yükseklikte durması için */
+    /* Kutunun yüksekliği takvim kutularına yakın olsun diye */
+    min-height: 200px; 
 }
 
 .message-item { 
@@ -115,27 +111,10 @@ input, select, textarea {
     padding-bottom: 8px; 
 }
 
-.message-item:last-child { 
-    border-bottom: none; 
-}
-
-.message-user { 
-    color: #f2f3f5; 
-    font-weight: 600; 
-    margin-right: 5px; 
-}
-
-.message-time { 
-    color: #949ba4; 
-    font-size: 0.75rem; 
-}
-
-.message-content { 
-    display: block; 
-    margin-top: 3px; 
-    color: #dbdee1;
-    line-height: 1.4;
-}
+.message-item:last-child { border-bottom: none; }
+.message-user { color: #f2f3f5; font-weight: 600; margin-right: 5px; }
+.message-time { color: #949ba4; font-size: 0.75rem; }
+.message-content { display: block; margin-top: 3px; color: #dbdee1; line-height: 1.4; }
 
 /* Basic */
 
