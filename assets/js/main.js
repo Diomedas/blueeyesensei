@@ -1,9 +1,3 @@
-/*
-	Strongly Typed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -62,31 +56,43 @@
 					visibleClass: 'navPanel-visible'
 				});
 
-	// Discord Mesajlarını Çeken Fonksiyon
-	async function loadDiscordFeed() {
-	    const container = document.getElementById('discord-messages');
-	    if (!container) return;
-	
-	    try {
-	        const response = await fetch('messages.json?v=' + new Date().getTime());
-	        const data = await response.json();
-	        
-	        container.innerHTML = ''; 
-	        data.forEach(msg => {
-	            container.innerHTML += `
-	                <div class="message-item">
-	                    <div>
-	                        <span class="message-user">${msg.user}</span>
-	                        <span class="message-time">${msg.time}</span>
-	                    </div>
-	                    <span class="message-content">${msg.content}</span>
-	                </div>`;
-	        });
-	    } catch (e) {
-	        container.innerHTML = 'Mesajlar şu an yüklenemedi.';
-	    }
-	}
-	// Sayfa hazır olduğunda çalıştır
-	loadDiscordFeed();
+		// Discord Mesajlarını Çeken Fonksiyon
+		async function loadDiscordFeed() {
+		    const container = document.getElementById('discord-messages');
+		    if (!container) return;
+		
+		    try {
+		        // Pipeline'dan gelen veriyi çek (Cache-busting ile)
+		        const response = await fetch('messages.json?v=' + new Date().getTime());
+		        if (!response.ok) throw new Error('Veri çekilemedi');
+		        
+		        const data = await response.json();
+		        
+		        // İçeriği temizle
+		        container.innerHTML = ''; 
+		
+		        // Verileri güvenli bir şekilde bas
+		        data.forEach(msg => {
+		            const messageDiv = document.createElement('div');
+		            messageDiv.className = 'message-item';
+		            
+		            messageDiv.innerHTML = `
+		                <div>
+		                    <span class="message-user">${msg.user}</span>
+		                    <span class="message-time">${msg.time || ''}</span>
+		                </div>
+		                <span class="message-content">${msg.content}</span>
+		            `;
+		            container.appendChild(messageDiv);
+		        });
+		
+		    } catch (error) {
+		        console.error('Discord Hatası:', error);
+		        container.innerHTML = '<div style="text-align:center; padding:10px;">Mesajlar şu an yüklenemedi.</div>';
+		    }
+		}
+		
+		// Sayfa yüklendiğinde çalıştır
+		loadDiscordFeed();
 
 })(jQuery);
