@@ -70,7 +70,8 @@ input, select, textarea {
 
 /* Bölüm Yerleşimi ve Alt Takvimle Boşluk */
 #discord-feature {
-    margin-bottom: 6em; /* Takvim başlığı ile aradaki mesafeyi açar */
+    margin-bottom: 10em !important;
+	padding-bottom: 2em;
 }
 
 #discord-feature .box {
