@@ -66,11 +66,12 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* --- Discord Widget Estetiği --- */
+/* --- Discord Widget Full Updated --- */
 
-/* Başlığı ortalamak ve takvimle eşitlemek için */
+/* Discord bölümünün başlığını takvimdeki gibi ortalar */
 .discord-section header {
     text-align: center;
+    margin-bottom: 1.5em;
 }
 
 .discord-widget {
@@ -78,11 +79,11 @@ input, select, textarea {
     color: #dbdee1;
     border-radius: 8px;
     overflow: hidden;
-    margin: 20px 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     text-align: left;
-    width: 100%; /* Genişliği kapsayıcıya (takvime) eşitler */
+    width: 100%; /* Sütun genişliğini tam doldurur */
     box-sizing: border-box;
+    margin-top: 10px;
 }
 
 .discord-header {
@@ -105,6 +106,7 @@ input, select, textarea {
 .discord-body {
     padding: 15px;
     font-size: 0.9rem;
+    min-height: 180px; /* Kutunun takvim kutularıyla benzer yükseklikte durması için */
 }
 
 .message-item { 
@@ -131,7 +133,8 @@ input, select, textarea {
 .message-content { 
     display: block; 
     margin-top: 3px; 
-    color: #dbdee1; 
+    color: #dbdee1;
+    line-height: 1.4;
 }
 
 /* Basic */
