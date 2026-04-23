@@ -2677,4 +2677,38 @@ input, select, textarea {
 			    visibility: hidden !important;
 			    opacity: 0 !important;
 			}
+		/* --- Discord Widget Estetiği --- */
+		.discord-widget {
+		    background: #313338;
+		    color: #dbdee1;
+		    border-radius: 8px;
+		    overflow: hidden;
+		    margin: 20px 0;
+		    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+		    text-align: left;
+		}
+		.discord-header {
+		    background: #2b2d31;
+		    padding: 10px 15px;
+		    font-size: 0.85rem;
+		    font-weight: bold;
+		    display: flex;
+		    align-items: center;
+		    border-bottom: 1px solid #232428;
+		}
+		.status-dot {
+		    height: 10px; width: 10px;
+		    background-color: #23a55a;
+		    border-radius: 50%;
+		    margin-right: 10px;
+		}
+		.discord-body {
+		    padding: 15px;
+		    font-size: 0.9rem;
+		}
+		.message-item { margin-bottom: 12px; border-bottom: 1px solid #3e4047; padding-bottom: 8px; }
+		.message-item:last-child { border-bottom: none; }
+		.message-user { color: #f2f3f5; font-weight: 600; margin-right: 5px; }
+		.message-time { color: #949ba4; font-size: 0.75rem; }
+		.message-content { display: block; margin-top: 3px; color: #dbdee1; }
 	}

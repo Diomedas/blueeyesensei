@@ -62,4 +62,31 @@
 					visibleClass: 'navPanel-visible'
 				});
 
+	// Discord Mesajlarını Çeken Fonksiyon
+	async function loadDiscordFeed() {
+	    const container = document.getElementById('discord-messages');
+	    if (!container) return;
+	
+	    try {
+	        const response = await fetch('messages.json?v=' + new Date().getTime());
+	        const data = await response.json();
+	        
+	        container.innerHTML = ''; 
+	        data.forEach(msg => {
+	            container.innerHTML += `
+	                <div class="message-item">
+	                    <div>
+	                        <span class="message-user">${msg.user}</span>
+	                        <span class="message-time">${msg.time}</span>
+	                    </div>
+	                    <span class="message-content">${msg.content}</span>
+	                </div>`;
+	        });
+	    } catch (e) {
+	        container.innerHTML = 'Mesajlar şu an yüklenemedi.';
+	    }
+	}
+	// Sayfa hazır olduğunda çalıştır
+	loadDiscordFeed();
+
 })(jQuery);
