@@ -1,3 +1,9 @@
+/*
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
 (function($) {
 
 	var	$window = $(window),
@@ -56,43 +62,44 @@
 					visibleClass: 'navPanel-visible'
 				});
 
-		// Discord Mesajlarını Çeken Fonksiyon
-		async function loadDiscordFeed() {
-		    const container = document.getElementById('discord-messages');
-		    if (!container) return;
-		
-		    try {
-		        // Pipeline'dan gelen veriyi çek (Cache-busting ile)
-		        const response = await fetch('messages.json?v=' + new Date().getTime());
-		        if (!response.ok) throw new Error('Veri çekilemedi');
-		        
-		        const data = await response.json();
-		        
-		        // İçeriği temizle
-		        container.innerHTML = ''; 
-		
-		        // Verileri güvenli bir şekilde bas
-		        data.forEach(msg => {
-		            const messageDiv = document.createElement('div');
-		            messageDiv.className = 'message-item';
-		            
-		            messageDiv.innerHTML = `
-		                <div>
-		                    <span class="message-user">${msg.user}</span>
-		                    <span class="message-time">${msg.time || ''}</span>
-		                </div>
-		                <span class="message-content">${msg.content}</span>
-		            `;
-		            container.appendChild(messageDiv);
-		        });
-		
-		    } catch (error) {
-		        console.error('Discord Hatası:', error);
-		        container.innerHTML = '<div style="text-align:center; padding:10px;">Mesajlar şu an yüklenemedi.</div>';
-		    }
-		}
-		
-		// Sayfa yüklendiğinde çalıştır
-		loadDiscordFeed();
-
 })(jQuery);
+
+	// --- Dinamik Form Alanları (Global Scope) ---
+
+	window.toggleContactInput = function() {
+		const method = document.getElementById('contact_method').value;
+		const wrapper = document.getElementById('contact_details_wrapper');
+		const input = document.getElementById('contact_details');
+		
+		const placeholders = {
+			'Email': 'john@example.com',
+			'LINE': 'john123',
+			'WhatsApp': '+81 90-0000-0000',
+			'Discord': 'username'
+		};
+
+		if (method && placeholders[method]) {
+			wrapper.style.display = 'block';
+			input.placeholder = placeholders[method];
+			input.required = true;
+		} else {
+			wrapper.style.display = 'none';
+			input.required = false;
+			input.value = ''; // Kutu gizlendiğinde içeriği temizle
+		}
+	};
+
+	window.toggleOtherGoalInput = function() {
+		const goal = document.getElementById('goal_location').value;
+		const wrapper = document.getElementById('other_goal_wrapper');
+		const input = document.getElementById('other_goal_details');
+
+		if (goal === 'Other') {
+			wrapper.style.display = 'block';
+			input.required = true;
+		} else {
+			wrapper.style.display = 'none';
+			input.required = false;
+			input.value = '';
+		}
+	};
