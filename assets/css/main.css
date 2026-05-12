@@ -66,86 +66,12 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* --- Discord Widget Full Updated --- */
-
-/* Bölüm Yerleşimi ve Alt Takvimle Boşluk */
-#discord-feature {
-    margin-bottom: 4em !important;
-	padding-bottom: 0em;
-}
-
-#discord-feature .box {
-    padding: 0; /* Widget'ın kutu sınırlarına tam oturması için */
-    overflow: hidden;
-}
-
-.discord-widget {
-    background: #313338;
-    color: #dbdee1;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-align: left;
-    width: 100%; 
-    box-sizing: border-box;
-    margin-top: 10px;
-}
-
-.discord-header {
-    background: #2b2d31;
-    padding: 10px 15px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #232428;
-}
-
-.status-dot {
-    height: 10px; width: 10px;
-    background-color: #23a55a;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.discord-body {
-    padding: 15px;
-    font-size: 0.9rem;
-    min-height: 200px; /* Kutunun yüksekliğini takvim kutularıyla dengeler */
-}
-
-.message-item { 
-    margin-bottom: 12px; 
-    border-bottom: 1px solid #3e4047; 
-    padding-bottom: 8px; 
-}
-
-.message-item:last-child { 
-    border-bottom: none; 
-}
-
-.message-user { 
-    color: #f2f3f5; 
-    font-weight: 600; 
-    margin-right: 5px; 
-}
-
-.message-time { 
-    color: #949ba4; 
-    font-size: 0.75rem; 
-}
-
-.message-content { 
-    display: block; 
-    margin-top: 3px; 
-    color: #dbdee1; 
-    line-height: 1.4; 
-}
-
 /* Basic */
 
 	html {
 		box-sizing: border-box;
+		scroll-behavior: smooth;
+		scroll-padding-top: 80px;
 	}
 
 	*, *:before, *:after {
@@ -219,12 +145,12 @@ input, select, textarea {
 		}
 
 		a:hover {
-			color: #357abd;
+			color: #4a86e8;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 
 			a:hover strong {
-				color: #357abd;
+				color: #4a86e8;
 			}
 
 	strong, b {
@@ -1704,7 +1630,7 @@ input, select, textarea {
 				top: 2.6em;
 				display: block;
 				font-size: 0.8em;
-				background: #878787;
+				background: #4a86e8;
 				color: #e4e4e4;
 				width: 2em;
 				height: 2em;
@@ -1722,68 +1648,123 @@ input, select, textarea {
 					top: 0;
 				}
 
-/* Form */
+/* ==========================================================================
+   BLUE EYE SENSEI - FULL UPDATED MODERN FORM DESIGN
+   ========================================================================== */
 
-	form label {
-		font-weight: 600;
-		text-transform: uppercase;
-		color: #888;
-		display: block;
-		margin: 0 0 1em 0;
-	}
+/* 1. Formun Dış Çerçevesi ve Kutusu */
+section#footer .box.excerpt {
+    border: 2px solid #e9ecef; 
+    padding: 3em;              
+    border-radius: 15px;       
+    background: #fff;          
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
 
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],
-	form select,
-	form textarea {
-		-moz-transition: background-color 0.25s ease-in-out;
-		-webkit-transition: background-color 0.25s ease-in-out;
-		-ms-transition: background-color 0.25s ease-in-out;
-		transition: background-color 0.25s ease-in-out;
-		-webkit-appearance: none;
-		display: block;
-		border: 0;
-		background: #e8e8e8;
-		width: 100%;
-		box-shadow: inset 2px 2px 0px 0px rgba(0, 0, 0, 0.1);
-		border-radius: 4px;
-		line-height: 1.25em;
-		padding: 0.75em 1em 0.75em 1em;
-	}
+/* 2. Form Giriş Metni (Header Altındaki Metin) */
+#footer .box.excerpt header p {
+    color: #444 !important;      
+    font-size: 1.15rem !important; 
+    font-weight: 500 !important;
+    opacity: 1 !important;        
+    margin-bottom: 2em;
+}
 
-		form input[type="text"]:focus,
-		form input[type="email"]:focus,
-		form input[type="password"]:focus,
-		form select:focus,
-		form textarea:focus {
-			background: #f0f0f0;
-		}
+/* 3. Ana Başlıklar (Basic Info, Main Goal vb.) */
+form label {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333 !important; 
+    display: block;
+    margin: 0 0 0.8em 0;
+    letter-spacing: 1.5px;
+    font-size: 1.2rem !important;
+}
 
-	form textarea {
-		min-height: 11em;
-	}
+/* 4. Alt Açıklama Metinleri (Which language do you want... vb.) */
+#footer form .col-12 p {
+    font-size: 1.1rem !important; 
+    color: #444 !important;       
+    font-weight: 500;             
+    margin-top: -0.5em !important;           
+    margin-bottom: 1.5em !important;
+}
 
-	form ::-webkit-input-placeholder {
-		color: #555 !important;
-		line-height: 1.35em;
-	}
+#footer form .col-12 p em {
+    font-style: italic;
+    opacity: 0.9;
+}
 
-	form :-moz-placeholder {
-		color: #555 !important;
-	}
+/* 5. Girdi Alanları (Input, Select, Textarea) */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    background: #f8f9fa; 
+    border: 2px solid #e9ecef; 
+    border-radius: 10px; 
+    color: #333;
+    padding: 1em 1.2em;
+    line-height: 1.5;
+    box-shadow: none; 
+    transition: all 0.3s ease;
+}
 
-	form ::-moz-placeholder {
-		color: #555 !important;
-	}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form select:focus,
+form textarea:focus {
+    background: #ffffff;
+    border-color: #4a86e8 !important; 
+    outline: 0;
+    box-shadow: 0 0 0 4px rgba(74, 134, 232, 0.1); 
+}
 
-	form :-ms-input-placeholder {
-		color: #555 !important;
-	}
+/* 6. Placeholder (John Doe gibi geçici yazılar) - KOYULAŞTIRILDI */
+form ::-webkit-input-placeholder { color: #777 !important; opacity: 1 !important; }
+form :-moz-placeholder { color: #777 !important; opacity: 1 !important; }
+form ::-moz-placeholder { color: #777 !important; opacity: 1 !important; }
+form :-ms-input-placeholder { color: #777 !important; opacity: 1 !important; }
 
-	form ::-moz-focus-inner {
-		border: 0;
-	}
+form textarea {
+    min-height: 10em;
+    resize: vertical;
+}
+
+/* 7. Submit Butonu (Outline Tasarım) - YUKARI TAŞINDI */
+form .actions {
+    margin-top: 1em !important; /* Butonu yukarı çeken değer */
+    padding-top: 0;
+    text-align: center;
+}
+
+form .actions input[type="submit"] {
+    -webkit-appearance: none;
+    display: inline-block;
+    background-color: transparent !important; 
+    border: 2px solid #4a86e8 !important; 
+    color: #4a86e8 !important; 
+    border-radius: 50px !important; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1.2em 3em !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    min-width: 250px;
+}
+
+form .actions input[type="submit"]:hover {
+    background-color: #6ad2e6 !important; 
+    border-color: #6ad2e6 !important;
+    color: #ffffff !important;
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(106, 210, 230, 0.3) !important;
+}
 
 /* Table */
 
@@ -1839,7 +1820,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #4a90e2;
+		background: #6ad2e6;
 		color: #fff !important;
 		text-transform: uppercase;
 		border-radius: 4px;
@@ -1870,7 +1851,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #357abd;
+			background: #4a86e8;
 		}
 
 		input[type="button"]:active,
@@ -1878,7 +1859,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background: #357abd;
+			background: #4a86e8;
 		}
 
 		input[type="button"].alt,
@@ -1930,44 +1911,188 @@ input, select, textarea {
 
 	.icon {
 		text-decoration: none;
+		border-bottom: none;
 		position: relative;
-		text-decoration: none;
 	}
 
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
-		}
-
-		.icon:before {
-			line-height: inherit;
-		}
-
-		.icon > .label {
-			display: none;
-		}
-
-		.icon.solid:before {
-			font-weight: 900;
-		}
-
-		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
-		}
-
-/* Page Wrapper */
-
-	#page-wrapper > section {
-		margin-bottom: 0;
+	.icon:before {
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		line-height: 1;
+		text-transform: none !important;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
 	}
+
+	.icon > .label {
+		display: none; /* Genel kullanımda etiketleri gizli tutar */
+	}
+
+	.icon.solid:before {
+		font-weight: 900;
+	}
+
+	.icon.brands:before {
+		font-family: 'Font Awesome 5 Brands';
+	}
+
+/* ==========================================================================
+   BLUE EYE SENSEI - FULL PAGE WRAPPER & COMPONENTS
+   ========================================================================== */
+
+/* 1. Global Wrapper & Zebra Yapısı */
+.wrapper { 
+    padding: 8em 0; 
+    text-align: center; 
+    position: relative; 
+}
+
+/* Style 1: Beyaz Katmanlar */
+.style1 { 
+    background-color: #ffffff; 
+}
+
+/* Style 2: Zebra (Açık Gri) Katmanlar */
+.style2 { 
+    background-color: #f8f9fa; 
+    border-top: 1px solid #eee; 
+    border-bottom: 1px solid #eee; 
+}
+
+/* 2. Ortak Liste Tasarımı (Check-list) */
+.check-list { 
+    list-style: none; 
+    padding: 0; 
+    display: inline-block; 
+    text-align: left; 
+    margin: 1.5em 0; 
+}
+
+.check-list li { 
+    margin-bottom: 0.8em; 
+    font-size: 1.1rem; 
+    color: #555; 
+    position: relative;
+    padding-left: 1.5em; /* İkon için boşluk */
+}
+
+.check-list li:before { 
+    content: '✓'; 
+    color: #4a86e8; 
+    position: absolute;
+    left: 0;
+    font-weight: bold; 
+}
+
+/* 3. "How It Works" Adım Kutuları */
+.step-box { 
+    padding: 2.5em 2em; 
+    background: #fff; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04); 
+    height: 100%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    text-align: left;
+}
+
+.step-box:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 30px rgba(74, 134, 232, 0.1);
+}
+
+.step-num { 
+    font-size: 3.5rem; 
+    font-weight: 900; 
+    color: #4a86e8; 
+    opacity: 0.15; 
+    display: block; 
+    margin-bottom: -0.6em; 
+}
+
+.step-box h3 { 
+    font-size: 1.3rem; 
+    margin-bottom: 0.8em; 
+    color: #333; 
+    font-weight: 700;
+}
+
+/* 4. "Courses" Tablo Tasarımı */
+.table-wrapper { 
+    overflow-x: auto; 
+    margin: 2.5em 0; 
+}
+
+table { 
+    width: 100%; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    border-collapse: separate; 
+    border-spacing: 0; 
+    background: #fff; 
+    border: 1px solid #e9ecef; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    text-align: left; 
+}
+
+th, td { 
+    padding: 1.2em 1.5em; 
+    border-bottom: 1px solid #e9ecef; 
+}
+
+th { 
+    background-color: #f1f4f8; 
+    color: #4a86e8; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    font-size: 0.85rem; 
+    letter-spacing: 1px; 
+}
+
+tr:last-child td { border-bottom: 0; }
+
+/* 5. "Available Languages" Dil Etiketleri (Pills) */
+.lang-tags { 
+    list-style: none; 
+    padding: 0; 
+    margin: 1.5em 0; 
+}
+
+.lang-tags li { 
+    display: inline-block; 
+    background: #4a86e8; 
+    color: #fff; 
+    padding: 0.5em 1.5em; 
+    border-radius: 50px; 
+    margin: 0.4em; 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+}
+
+.lang-tags li.extra { 
+    background: #e9ecef; 
+    color: #666; 
+}
+
+/* 6. Mobil İyileştirmeler (Responsive) */
+@media screen and (max-width: 736px) {
+    .wrapper { padding: 4em 1em; }
+    
+    .step-box { margin-bottom: 2em; }
+    
+    /* Mobilde listeleri tek sütuna düşür */
+    .check-list { 
+        display: block; 
+        columns: 1 !important; 
+        -webkit-columns: 1 !important;
+        -moz-columns: 1 !important;
+    }
+}
+
 
 /* Header */
 
@@ -1979,15 +2104,17 @@ input, select, textarea {
 	}
 
 		#header > .container {
-			padding: 6em 0 4em 0;
+			padding: 12em 0 6em 0;
 			border-bottom: solid 2px #e5e5e5;
 			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
+			border-bottom: none !important;
+			box-shadow: none !important;
 		}
 
 		#header h1 {
 			font-family: 'Arvo';
 			font-weight: 700;
-			color: #357abd;
+			color: #4a86e8;
 			text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
 			font-size: 3em;
 			letter-spacing: 13px;
@@ -1995,11 +2122,11 @@ input, select, textarea {
 
 			#header h1 a {
 				border: 0;
-				color: #4a90e2 !important;
+				color: #6ad2e6 !important;
 			}
 			
 			#header h1 a:hover {
-			color: #357abd !important;
+			color: #4a86e8 !important;
 			text-decoration: none !important;
 			}
 
@@ -2044,8 +2171,8 @@ input, select, textarea {
 
 				#nav > ul > li > a:before {
 					display: inline-block;
-					background: #878787;
-					color: #e4e4e4;
+					background: #4a86e8;
+					color: #ffffff;
 					width: 2.25em;
 					font-size: 0.8em;
 					height: 2.25em;
@@ -2058,7 +2185,7 @@ input, select, textarea {
 					-webkit-transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
 					-o-transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
 					-ms-transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
-					transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
+					transition: color 0.25s ease-in-out, background 0.25s ease-in-out, transform 0.25s ease-in-out;
 				}
 
 				#nav > ul > li > a > span {
@@ -2077,13 +2204,14 @@ input, select, textarea {
 
 			#nav > ul > li.active > a:before,
 			#nav > ul > li:hover > a:before {
-				background: #357abd;
+				background: #6ad2e6;
 				color: #fff;
+				transform: scale(1.1);
 			}
 
 			#nav > ul > li.active > a > span,
 			#nav > ul > li:hover > a > span {
-				color: #357abd;
+				color: #4a86e8;
 			}
 
 	.dropotron {
@@ -2150,7 +2278,7 @@ input, select, textarea {
 				-webkit-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 				-ms-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 				transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-				color: #357abd;
+				color: #4a86e8;
 			}
 
 /* Features */
@@ -2171,64 +2299,164 @@ input, select, textarea {
 			margin-top: 1.25em;
 		}
 
-/* Banner */
+/* ==========================================================================
+   BLUE EYE SENSEI - CLEAN MODERN BANNER
+   ========================================================================== */
 
-	#banner {
-		position: relative;
-		overflow: hidden;
-		background: #fff;
-		color: #fff;
-		text-align: center;
-		border-top: solid 2px #e5e5e5;
-		border-bottom: solid 2px #e5e5e5;
-		box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
-		position: relative;
-		text-transform: uppercase;
-		background: url("../../images/banner.jpg");
-		background-size: cover;
-		padding: 10em 0;
-	}
+#banner {
+    position: relative;
+    padding: 10em 0 8em 0;
+    text-align: center;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    /* Yarım yamalak çizgileri ve gölgeleri temizliyoruz */
+    border-top: 0 !important;
+    box-shadow: none !important; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-		#banner p {
-			font-weight: 400;
-			font-size: 2em;
-			line-height: 1.5em;
-			letter-spacing: 4px;
-			text-align: center;
-			margin: 0;
-		}
+/* Arka plan dokusunu (noktacıklar) düzeltiyoruz - Tek koca nokta oluşmasın diye */
+#banner::before {
+	display: none;
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#4a86e8 0.5px, transparent 0.5px);
+    background-size: 20px 20px; /* Dokuyu küçülttük */
+    opacity: 0.08; /* Daha da transparan yaptık */
+    z-index: 0;
+}
 
-		#banner strong {
-			color: inherit;
-		}
+#banner > .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+}
 
-		#banner > .container {
-			position: relative;
-		}
+/* O MEŞHUR SİYAH NOKTAYI VE ÇİZGİLERİ SİLEN KISIM */
+#banner header:after,
+#banner header:before,
+#banner h2:after,
+#banner h2:before {
+    display: none !important;
+    content: none !important;
+}
 
-			#banner > .container:before, #banner > .container:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 50%;
-				width: 35px;
-				height: 141px;
-				margin-top: -70px;
-				background: url("images/bracket.svg");
-				opacity: 0.15;
-			}
+/* Başlık Ayarları */
+#banner h2 {
+    font-family: 'Arvo', serif;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #333;
+    text-transform: none;
+    letter-spacing: -1px;
+    margin-bottom: 0.5em;
+}
 
-			#banner > .container:before {
-				left: 0;
-			}
+#banner h2 strong {
+    color: #4a86e8;
+    display: block;
+}
 
-			#banner > .container:after {
-				-moz-transform: scaleX(-1);
-				-webkit-transform: scaleX(-1);
-				-ms-transform: scaleX(-1);
-				transform: scaleX(-1);
-				right: 0;
-			}
+/* Açıklama Metni (Tam Ortalama ve Temizleme) */
+#banner p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 850px; /* Genişliği hafif artırdık */
+    margin: 0 auto 2.5em auto !important; /* Ortalamayı garanti ettik */
+    text-align: center !important;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    display: block;
+}
+
+#banner p strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* --- YENİLENMİŞ BUTON DÜZENLEMELERİ (BANNER, COURSE, COMMUNITY) --- */
+
+/* Buton Konteynırı (Hizalama) */
+#banner .actions, 
+#courses .actions, 
+#community .actions {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Tüm Butonların Ortak Görsel Yapısı (Oval ve Büyük) */
+#banner .button,
+#courses .button,
+#community .button {
+    min-width: 220px;
+    border-radius: 50px !important; /* Tam oval */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.2em 2em;
+    transition: all 0.3s ease;
+    border: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+/* MAVİ DOLGULU BUTONLAR: 1. Ana Buton + Courses + Community */
+#banner .button.primary,
+#courses .button,
+#community .button {
+    background-color: #4a86e8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 20px rgba(74, 134, 232, 0.15);
+}
+
+/* Mavi Butonlar Hover (Üzerine gelince) */
+#banner .button.primary:hover,
+#courses .button:hover,
+#community .button:hover {
+    background-color: #6ad2e6 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(106, 210, 230, 0.2);
+    color: #ffffff !important;
+}
+
+/* ŞEFFAF BUTON: Sadece Banner'daki 2. Buton (Discord vb.) */
+#banner .button:not(.primary) {
+    background-color: transparent !important;
+    border: 2px solid #4a86e8 !important;
+    color: #4a86e8 !important;
+    box-shadow: none;
+}
+
+#banner .button:not(.primary):hover {
+    background-color: #6ad2e6 !important;
+    border-color: #6ad2e6 !important;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+}
+
+/* Mobil Uyumluluk (Tüm butonlar için) */
+@media screen and (max-width: 736px) {
+    #banner .actions, #courses .actions, #community .actions {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    #banner .button, #courses .button, #community .button {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+}
 
 /* Main */
 
@@ -2251,6 +2479,24 @@ input, select, textarea {
 
 		#content > section:first-child,
 		#content > article:first-child {
+			border-top: 0;
+			box-shadow: none;
+			margin: 0;
+			padding: 0;
+		}
+
+/* Sidebar */
+
+	#sidebar > section,
+	#sidebar > article {
+		border-top: solid 2px #e5e5e5;
+		box-shadow: inset 0px 8px 0px 0px #fff, inset 0px 10px 0px 0px #e5e5e5;
+		margin: 5em 0 0 0;
+		padding: 5em 0 0 0;
+	}
+
+		#sidebar > section:first-child,
+		#sidebar > article:first-child {
 			border-top: 0;
 			box-shadow: none;
 			margin: 0;
@@ -2295,6 +2541,129 @@ input, select, textarea {
 		margin-top: 6em;
 		padding-top: 4em;
 	}
+	
+/* --- FOOTER & COPYRIGHT GLOBAL (DESKTOP) --- */
+
+/* Footer Sosyal Medya Konteyneri */
+.footer-social-wrapper {
+    text-align: center;
+    margin-top: 4em;
+    width: 100%;
+}
+
+#footer ul.icons {
+    cursor: default;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    display: block;
+    text-align: center;
+}
+
+#footer ul.icons li {
+    display: inline-block !important;
+    padding: 0 !important;
+    margin: 0 30px !important; /* Masaüstü ikon arası boşluk */
+    vertical-align: middle;
+}
+
+/* Şablonun ikonlar etrafına çizdiği o meşhur gri küçük daireyi ve noktaları öldürür */
+#footer ul.icons li:before {
+    display: none !important;
+    content: none !important;
+}
+
+/* İkon Boyutlarını ve Görünümü Serbest Bırak */
+#footer ul.icons li a {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    border: 0 !important;
+    text-decoration: none;
+}
+
+/* DESKTOP İKON BÜYÜKLÜĞÜ */
+#footer ul.icons li a:before {
+    font-size: 2.5rem !important; /* Masaüstünde büyük görünüm */
+    line-height: 1.2 !important;
+    display: block !important;
+    color: #4a86e8 !important;
+    transition: all 0.3s ease;
+}
+
+#footer ul.icons li a:hover:before {
+    color: #6ad2e6 !important;
+    transform: scale(1.1);
+}
+
+/* Label (Yazı) Ayarları */
+#footer ul.icons li a .label {
+    display: block !important;
+    visibility: visible !important;
+    text-indent: 0 !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+    margin-top: 10px;
+	transition: color 0.3s ease;
+}
+
+/* İkonun üzerine gelindiğinde yazı rengini değiştirir */
+#footer ul.icons li a:hover .label {
+    color: #4a86e8 !important; /* İstediğin mavi tonu */
+}
+
+/* Copyright Alanı */
+#copyright {
+    border-top: solid 1px rgba(0,0,0,0.05) !important;
+    margin-top: 5em !important;
+    padding: 4em 0 !important;
+    text-align: center !important;
+}
+
+#copyright .links {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+#copyright .links li {
+    display: inline-block !important;
+    border-left: 0 !important;
+    padding: 0 15px !important;
+    font-size: 1.2rem !important;
+    color: #999 !important;
+}
+
+
+/* Logo Görseli - Yeni Dev Boyut */
+#logo img {
+    height: auto !important; 
+    
+    /* 1. Masaüstü Boyutu: 15'ten 28'e çıkardık. 
+       Eğer hala küçük gelirse bu rakamı 30-35 bandına çekebilirsin. */
+    width: 46rem !important; 
+    
+    /* 2. Sınırlandırma: Çok büyük ekranlarda bile %90'ı geçmesin */
+    max-width: 90%; 
+    
+    display: inline-block;
+    vertical-align: middle;
+    
+    /* Varsa şablonun eklediği padding'leri sıfırlayalım */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Mobilde (736px altı) Logo Düzenlemesi */
+@media screen and (max-width: 736px) {
+    #logo img {
+        /* Mobilde daha okunaklı ama ekranı da kaplamayan orta boy */
+        width: 30rem !important; 
+    }
+}
+
 
 /* XLarge */
 
@@ -2592,6 +2961,12 @@ input, select, textarea {
 				-ms-transform: translateX(0);
 				transform: translateX(0);
 			}
+			
+		/* Sidebar */
+
+			#sidebar {
+				padding-top: 6em;
+			}
 
 	}
 
@@ -2718,7 +3093,18 @@ input, select, textarea {
 				margin: 2em 0 0 0;
 				padding: 2em 0 0 0;
 			}
+			
+		/* Sidebar */
 
+			#sidebar {
+				padding-top: 3em;
+			}
+
+				#sidebar > section,
+				#sidebar > article {
+					margin: 3em 0 0 0;
+					padding: 3em 0 0 0;
+				}
 		/* Footer */
 
 			#footer {
@@ -2741,10 +3127,5 @@ input, select, textarea {
 					margin-left: 0;
 					border-left: 0;
 				}
-			/* Mobil navigasyon barını ve panelini tamamen gizle */
-			#titleBar, #navPanel {
-			    display: none !important;
-			    visibility: hidden !important;
-			    opacity: 0 !important;
-			}
-	}
+
+}
